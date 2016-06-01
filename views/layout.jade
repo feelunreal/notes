@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+head
+	meta(charset="UTF-8")
+	title Notes
+	link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css")
+	link(rel="stylesheet", href="/css/main.css")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.min.js")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js")
+	meta(name="viewport" content="width=device-width")
+body
+	.wrapper
+		.ui.secondary.pointing.menu
+			.header.item
+				div.ui.teal.large.ribbon.label My Notes
+			.right.menu
+				if user
+					a.item(href="/logout") Logout (#{user})
+				else
+					a.active.teal.item(href="/login") Login
+		block content

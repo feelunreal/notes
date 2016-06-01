@@ -1,0 +1,54 @@
+.wrapper {
+	max-width: 800px;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.container, .middle {
+	height: 90%;
+}
+
+.loader {
+	text-align: center;
+}
+
+.user-notes {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: solid 1px #F3F3F3;
+}
+
+.icon-wrapper {
+	display: inline-block;
+	margin-left: 5px;
+	cursor: pointer;
+}
+
+.note-item {
+	padding: 5px !important;
+	margin: 2px !important;
+}
+
+.note-date {
+	padding-top: 5px;
+	font-size: 0.7em;
+	padding-right: 5px;
+	color: grey;
+}
+
+div[contentEditable] {
+	cursor: pointer;
+	background-color: white;
+	padding: .2em;
+	color: grey;
+}
+div[contentEditable]:focus {
+	cursor: pointer;
+	background-color: #E4FFF4;
+}
+
+.remove.icon {
+	color: #71C7A2;
+	cursor: pointer;
+	margin-left: 5px;
+}

@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	div(ng-app="notesApp" ng-controller="NotesCtrl")
+		.new-note
+			.ui.form
+				.field
+					input(class="fluid" type="text" placeholder="type your text here.." ng-model="newNote" ng-keydown="saveNote($event, ngNote)")
+		.user-notes
+			div(class="ui small teal message" ng-if="notes.length < 1") You have no notes
+			div(class="note-item ui basic large label" ng-repeat="note in notes")
+				div(contentEditable="true" ng-model="editableNote" id="{{note._id}}") {{note.body}}
+				div(class="note-date") {{note.created}}
+					i.remove.icon(ng-click="deleteNote(note._id)")
+		.loader
+			img(src="/images/cogs_4.gif")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.6/socket.io.min.js")
+	script.
+		var user = '#{user}';
+		var token = '#{token}';
+	script(src="/js/main.js")

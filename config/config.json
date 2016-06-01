@@ -1,0 +1,15 @@
+{
+	"port": 3000,
+	"mongoose": {
+		"uri": "mongodb://localhost/notes",
+		"options": {
+			"server": {
+				"socketOptions": {
+					"keepAlive": 1
+				}
+			}
+		}
+	},
+	"apiKey": "cloudconnected",
+	"apiTokenExpiration": "24h"
+}

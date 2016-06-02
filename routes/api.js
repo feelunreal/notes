@@ -3,7 +3,9 @@ var express = require('express'),
 	User = require('../models/user.js'),
 	Note = require('../models/note.js'),
 	jwt = require('jsonwebtoken'),
-	config = require('../config');
+	config = require('../config'),
+	Entities = require('html-entities').AllHtmlEntities,
+	entities = new Entities();
 
 router.get('/', function(req, res){
 	res.send('Notes API is running');
@@ -61,6 +63,7 @@ router.get('/users/:user/notes', apiAuth, userTokenMatch, function(req, res){
 	], function(err, notes) {
 		if (err) return res.sendStatus(400);
 		for (var i = notes.length - 1; i >= 0; i--) {
+			notes[i].body = entities.decode(notes[i].body);
 			var date = notes[i].created.toString();
 			var p = date.split(' ');
 			date = p[1] + ' ' + p[2] + ' ' + p[4];

@@ -25,7 +25,7 @@
 		});
 
 		$scope.saveNote = function($event) {
-			if ($event.keyCode === 13) {
+			if ($event.keyCode === 13 && $scope.newNote) {
 				var note = {
 					body: $scope.newNote,
 					author: user

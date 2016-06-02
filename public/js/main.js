@@ -73,9 +73,11 @@
 	                    el = event.target;
 
 	                if (enter) {
+	                	var val = elm.html();
+	                	if (val == '<br>') val = '';
 	                	var note = {
 	                		_id: elm.attr('id'),
-	                		body: elm.html(),
+	                		body: val,
 	                		author: user
 	                	};
 

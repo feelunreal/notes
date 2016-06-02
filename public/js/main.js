@@ -75,7 +75,7 @@
 	                if (enter) {
 	                	var note = {
 	                		_id: elm.attr('id'),
-	                		body: elm.html(),
+	                		body: elm.html().replace(/&nbsp;/gi,' '),
 	                		author: user
 	                	};
 

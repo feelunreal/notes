@@ -5,7 +5,7 @@
 		"options": {
 			"server": {
 				"socketOptions": {
-					"keepAlive": 1
+					"keepAlive": 1000
 				}
 			}
 		}
